@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar class="fondo" color="default">
+    <ion-title>Inicio</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h2>Login con Facebook!</h2> <ion-icon name="ionic" color="primary"></ion-icon>
+  <p>
+    Puedes ingresar utilizando tu cuenta de Facebook y así evitar el trabajo de crear una cuenta,
+    ten en cuenta que tendremos acceso a tus datos.
+  </p>
+  <button ion-button icon-right (click)="loginWithFB()"> Login Facebook <ion-icon name="logo-facebook"></ion-icon> </button>
+  <ion-card *ngIf="userData">
+    <ion-card-header>{{ userData.username }}</ion-card-header>
+    <img [src]="userData.picture" />
+    <ion-card-content>
+      <p>Email: {{ userData.email }}</p>
+      <p>Welcome: {{ userData.first_name }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
